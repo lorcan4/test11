@@ -11,7 +11,12 @@ app.use(express.static(path.join(__dirname,  'node.js')));
 
 
 app.get('/api1', (req, res) => {
-  res.render('index1'); // Render the index.ejs file
+  res.render('index1', (err) => {
+    if (err) {
+      console.error('Error rendering EJS:', err);
+      res.status(500).send('Server Error');
+    }
+  });
 });
  
 const PORT = process.env.PORT || 3000;
