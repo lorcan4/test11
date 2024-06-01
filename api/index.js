@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'api')); // Set the directory for EJS files
 
 // Serve static files (CSS, JS, images)
-app.use(express.static(path.join(__dirname,  'node.js')));
+app.use(express.static(path.join(__dirname,  'api')));
 
 
 app.get('/api1', (req, res) => {
